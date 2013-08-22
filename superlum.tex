@@ -36,16 +36,25 @@
 
 \title{Acausality on the String Worldsheet}
 
+\author{Sergei Dubovsky}
+ \email{sergei.dubovsky@gmail.com}
+ \affiliation{Center for Cosmology and Particle Physics, Department of Physics, New York University, New York, NY, 10003, USA}
 \author{Patrick Cooper}
  \email{pjc370@nyu.edu}
 \affiliation{Center for Cosmology and Particle Physics, Department of Physics, New York University, New York, NY, 10003, USA}
 \author{Ali Mosen}
  \email{ahm302@nyu.edu}
-\affiliation{Center for Cosmology and Particle Physics, Department of Physics, New York University, New York, NY, 10003, USA}
+\affiliation{Center for Cosmology and Particle Physics, Department of Physics, New York University, New York,
+NY, 10003, USA}
 
 \date{\today}
 
 \begin{abstract}
+    In this paper we explore a peculiar theory with an acausal, but otherwise healthy S-Matrix and a perfectly well
+    defined local Lagrangian.  This S-matrix corresponds to the integrable theory of worldsheet excitation scattering on
+    a long string in the static gauge, however with a negative string tension (or imaginary width). We explore how this
+    acausality rears its  head in many features of the classical and quantum theory and use the Thermodynamic Bethe
+    Ansatz (TBA) to probe thermodynamic behavior.
 \end{abstract}
 
 \maketitle
@@ -54,16 +63,83 @@
 
 \section{\label{sec:level1}Introduction}
 
+\begin{equation}
+    \label{action}
+    \mathcal{S} = T \int d^{p+1} \sigma \sqrt{-\mathrm{det}(\eta_{a b} - \frac{1}{T_0} \partial_{a} X^i \partial_{b}
+    X^i)} .
+    \nonumber
+\end{equation}
+
 %*******************************
 \section{Classical Scattering}
 %*******************************
+This Lagrangian (\ref{action}), has a perfectly well defined, canonically normalized derivative expansion in the fields
+$\partial_{a}X^i$ of the form
+\begin{eqnarray}
+    \mathcal{S} = \int d^{p+1} \sigma \left( -\frac{1}{2} \partial_{a} X \cdot \partial^{a} X - \frac{1}{8 T}
+    (\partial_{a} X \cdot \partial^{a} X)^2 + \right . \nonumber\\
+    \left . \frac{1}{2 T} ((\dot{X} \cdot X')^2 - (\dot{X}^2 \cdot X'^2)) + \mathcal{O}(X^8) \right) ,
+    \nonumber
+\end{eqnarray}
+where the dot represents the usual Euclidean inner product on the flavor space of the transverse degrees of freedom and
+contraction of Latin worldsheet indices is done via the flat Minkowski metric with signature $(1,p)$. Note we subtracted
+the cosmological constant $T \cdot \mathrm{Area}$ which is infinite and non-dynamical in the free 2D theory of a long
+effective string. As was mentioned in \cite{Adams:2006sv}, effective field theories with a shift invariance and negative
+leading quadratic coupling may appear to be well behaved in the sense that they have a Lorentz invariant vacuum, however
+when scattering excitations on non-trivial backgrounds, superluminal signal propagation becomes manifest in the
+excitation's dispersion relations.
 
+We'll consider a string of length a in codimension one, where the Lagrangian for the single transverse mode
+parameterizing the perturbation of the string from equilibrium can be written,
+\begin{equation}
+    L[y(\sigma,\tau)] = -T \int_0^a d\sigma \sqrt{1 + y'^2(\sigma,\tau) - \dot{y}^2(\sigma,\tau)} \nonumber.
+\end{equation}
+where prime and dot denote the usual derivative with respect to $\sigma$ and $\tau$ respectively. After reversing the
+sign of the interaction, canonically normalizing the kinetic term, and expanding the square root, the non-constant
+Lagrangian becomes
+\begin{equation}
+    L \rightarrow \int_0^a d\sigma (-\frac{1}{2} (\partial_{a} y)(\partial^{a} y) -
+    \frac{1}{8 T}[(\partial_{a} y)(\partial^{a} y)]^2 + \mathcal{O}(y^8)) \nonumber.
+\end{equation}
+Making the substitution $T = 1/(2 \pi l_s^2)$, the variation of this action leads to the following equations of motion,
+\begin{equation}
+    \partial^2 y + \pi l_s^2 ((\partial y)^2 \partial^2 y + 2 \pi l_s^2 (\partial \partial y) \cdot (\partial y \partial
+    y)) = 0 \nonumber .
+\end{equation}
+Consider now scattering of an excitation of $y$ off of a constant background, $\overline{y}$.  Define $\partial_{a}
+\overline{y} = C_{a}$ and $y = \phi + \overline{y}$.
+The linearized equations of motion take the form
+\begin{equation}
+    \partial^2 \phi + 6 \pi l_s^2 ( C_{a} C^{a} \partial^2 \phi + 2 (\partial_{a} \partial_{b} \phi) C^{a}
+    C^{b}) = 0 .
+\end{equation}
+In momentum space, this leads to the following superluminal dispersion relation and hence, speed of sound
+\begin{equation}
+    c_s^2 \equiv \frac{\omega^2}{k^2} = 1 + 12 \pi l_s^2 (k \cdot C)^2 \nonumber .
+\end{equation}
+This is to be expected from a similar calculation done in \cite{Adams:2006sv}, where it was shown that the sign of the
+leading interaction can often lead to macroscopic non-locality, despite the fact that elementary perturbations of the
+vacuum state exhibit no such pathological behavior.  We
+
+%This behavior can be seen in a classical spacetime diagram of a Goldstone boson with a kink soliton solution.
+
+% Add here the explanation and graph of scattering across a kink solution. Include metric calculation and all that jazz
 
 %*********************
 \section{Cosomology}
 %*********************
 
-
+Another calculation to shed light on the bizarre nature of this theory, in the spirit of \cite{Dubovsky:2012wk},
+is to interpret cosmological solutions on the wrong sign string worldsheet. In (1+1) dimensions, isotropy isn't
+a constraint, so the only notion of "rotation invariance" we can have is "boost invariance" or rotations in the
+$\sigma-\tau$ plane.  Homogeneity is over constraining, leaving us only with the trivial vacuum solution so we seek
+solutions that are functions of the invariant length on the worldsheet, $X \equiv X(-\tau^2 + \sigma^2)$.  Also, to
+simplify the discussion, we'll consider only one additional flavor to those that can be fixed by a gauge
+transformation. The equations of motion for \ref{action}, using hyperbolic coordinates
+\begin{equation}
+    \partial_{\rho^2} \left( \frac{\frac{1}{T_0} \partial_{\rho^2} X \rho^2}{\sqrt{-1 \pm \frac{1}{T_0} \rho^2 (\partial X)^2}} \right) = 0
+\end{equation}
+with $\rho^2 = -\tau^2 + \sigma^2$ which can be positive or negative, however each of these solution branches are disconnected.
 %**************************
 \section{Thermodynamics}
 %**************************
