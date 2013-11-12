@@ -31,18 +31,18 @@
 %\newcommand{\p}{\partial_+}
 %\newcommand{\m}{\partial_-}
 %\newcommand{\newj}{\bar{\updelta}_0^j}
-\newcommand{\pd}{\partial}
+%\newcommand{\pd}{\partial}
 \begin{document}
 
 \title{Acausality on the String Worldsheet}
 
+\author{Patrick Cooper}
+ \email{pjc370@nyu.edu}
+ \affiliation{Center for Cosmology and Particle Physics, Department of Physics, New York University, New York, NY, 10003, USA}
 \author{Sergei Dubovsky}
  \email{sergei.dubovsky@gmail.com}
  \affiliation{Center for Cosmology and Particle Physics, Department of Physics, New York University, New York, NY, 10003, USA}
-\author{Patrick Cooper}
- \email{pjc370@nyu.edu}
-\affiliation{Center for Cosmology and Particle Physics, Department of Physics, New York University, New York, NY, 10003, USA}
-\author{Ali Mosen}
+\author{Ali Mohsen}
  \email{ahm302@nyu.edu}
 \affiliation{Center for Cosmology and Particle Physics, Department of Physics, New York University, New York,
 NY, 10003, USA}
@@ -50,11 +50,12 @@ NY, 10003, USA}
 \date{\today}
 
 \begin{abstract}
-    In this paper we explore a peculiar theory with an acausal, but otherwise healthy S-Matrix and a perfectly well
-    defined local Lagrangian.  This S-matrix corresponds to the integrable theory of worldsheet excitation scattering on
-    a long string in the static gauge, however with a negative string tension (or imaginary width). We explore how this
-    acausality rears its  head in many features of the classical and quantum theory and use the Thermodynamic Bethe
-    Ansatz (TBA) to probe thermodynamic behavior.
+    In this paper we explore a peculiar theory with an acausal, but otherwise healthy S-Matrix and a
+    perfectly well defined local Lagrangian.  This S-matrix corresponds to the integrable theory of
+    worldsheet excitation scattering on a long string in the static gauge, however with a negative
+    string tension (or imaginary width). We explore how this acausality rears its  head in many
+    features of the classical and quantum theory and use the Thermodynamic Bethe Ansatz (TBA) to
+    probe thermodynamic behavior.
 \end{abstract}
 
 \maketitle
@@ -62,86 +63,322 @@ NY, 10003, USA}
 %\tableofcontents
 
 \section{\label{sec:level1}Introduction}
+While investigating the worldsheet dynamics of a long closed string, it was found in
+\cite{Dubovsky:2012wk} that left and right moving excitations of the worldsheet, whose dynamics are
+governed by the Nambu-Goto action, are described by an integrable reflectionless 2D QFT with the following
+S-matrix, diagonalized in the momentum basis \begin{eqnarray} e^{2 i \delta(s)} = e^{i s l_s^2/4} ,
+\nonumber \end{eqnarray} where $s$ is the usual Mandelstam variable, and $l_s \equiv 1/2 \pi T$ is
+the string scale. It was shown that this theory shares many of the coveted features of quantum
+gravity, including a prototype for black hole formation and evaporation, as well as an inability to
+construct local observables. As one can check, the time delay of scattering in the center of mass
+frame of 2 wave packets of Nambu-Goldstone bosons on the worldsheet is proportional to $\frac{1}{2}
+E l_s^2$.
 
-\begin{equation}
-    \label{action}
-    \mathcal{S} = T \int d^{p+1} \sigma \sqrt{-\mathrm{det}(\eta_{a b} - \frac{1}{T_0} \partial_{a} X^i \partial_{b}
-    X^i)} .
-    \nonumber
-\end{equation}
+At this point, an interesting question arises. From the perspective of a theory of D scalar fields on the
+worldsheet, the string tension is simply a coupling constant.  What is the effect of reversing the
+sign of this interaction?  To do this consistently, we go to the static gauge, and canonically
+normalize the kinetic term leading to the following Lagrangian
+\begin{eqnarray}
+\label{action}
+\mathcal{L} = -T \sqrt{ - \mathrm{det} (\eta_{a b} - \frac{1}{T} \partial_a X^{\mu}
+    \partial_b X^{\nu} \eta_{\mu \nu})} \nonumber \\
+ = -T \left( 1 - \frac{1}{T}
+     (-(\dot{X})^2 + (X')^2) + \right. \nonumber \\
+     \left. \frac{1}{T^2} ((\dot{X} \cdot X')^2 -
+     (\dot{X})^2 (X')^2) \right)^{1/2} .
+\end{eqnarray}
+This Lagrangian corresponds by analogy to the following S-Matrix
+\begin{eqnarray}
+    e^{-i s l_s^2 /4} . \nonumber
+\end{eqnarray}
+In this theory we expect time advanced scattering as opposed to time delayed, ruining the causality
+of the theory.  This may seem surprising since, on the face of it, the Lagrangian can be expanded in a
+Taylor series, making manifest the fact that all interactions are perfectly local and Lorentz invariant.  It was shown
+in \cite{Adams:2006sv} however, that there are additional constraints on an effective Lagrangian.
+Namely for a scalar field theory with a shift symmetry, the leading quartic term must have postive
+coupling. What's interesting with this particular example, is that we have more than an effective
+Lagrangian.  In fact, we know that the target space can be viewed as a dynamical embedded surface in
+a D-dimensional spacetime and thus it can be quantized and subsequent time evolution can be studied.
+With these tools, as was shown in \cite{Dubovsky:2012wk}, one is able to extract an exact S-matrix
+for the \emph{embedded} worldsheet theory. Even though the theory with the flipped coupling constant is an
+effective theory from the perspective of perturbation theory, by deriving the full S-matrix we have
+in a sense UV completed this theory. Thus it is an ideal playground to isolate the effects of
+non-positivity \cite{Adams:2006sv}.  We do so by redoing some of the calculations found in
+\cite{Dubovsky:2012wk} and \cite{Adams:2006sv} with our new theory and extract physical intuition
+about where pathologies become manifest.
 
 %*******************************
 \section{Classical Scattering}
 %*******************************
+
 This Lagrangian (\ref{action}), has a perfectly well defined, canonically normalized derivative expansion in the fields
 $\partial_{a}X^i$ of the form
 \begin{eqnarray}
-    \mathcal{S} = \int d^{p+1} \sigma \left( -\frac{1}{2} \partial_{a} X \cdot \partial^{a} X - \frac{1}{8 T}
-    (\partial_{a} X \cdot \partial^{a} X)^2 + \right . \nonumber\\
-    \left . \frac{1}{2 T} ((\dot{X} \cdot X')^2 - (\dot{X}^2 \cdot X'^2)) + \mathcal{O}(X^8) \right) ,
-    \nonumber
+    \mathcal{L} = \frac{1}{2} \partial_{a} X \cdot \partial^{a} X - \frac{1}{8 T}
+    (\partial_{a} X \cdot \partial^{a} X)^2 + \nonumber \\
+    \frac{1}{2 T^2} ((\dot{X} \cdot X')^2 - (\dot{X}^2 \cdot X'^2)) + \mathcal{O}(X^8) , \nonumber
 \end{eqnarray}
 where the dot represents the usual Euclidean inner product on the flavor space of the transverse degrees of freedom and
-contraction of Latin worldsheet indices is done via the flat Minkowski metric with signature $(1,p)$. Note we subtracted
-the cosmological constant $T \cdot \mathrm{Area}$ which is infinite and non-dynamical in the free 2D theory of a long
+contraction of Latin worldsheet indices is done via the flat Minkowski metric with signature $(1,1)$. Note we subtracted
+the cosmological constant $-T \cdot \mathrm{Area}$ which is infinite and non-dynamical in the free 2D theory of a long
 effective string. As was mentioned in \cite{Adams:2006sv}, effective field theories with a shift invariance and negative
 leading quadratic coupling may appear to be well behaved in the sense that they have a Lorentz invariant vacuum, however
 when scattering excitations on non-trivial backgrounds, superluminal signal propagation becomes manifest in the
 excitation's dispersion relations.
 
-We'll consider a string of length a in codimension one, where the Lagrangian for the single transverse mode
-parameterizing the perturbation of the string from equilibrium can be written,
-\begin{equation}
-    L[y(\sigma,\tau)] = -T \int_0^a d\sigma \sqrt{1 + y'^2(\sigma,\tau) - \dot{y}^2(\sigma,\tau)} \nonumber.
-\end{equation}
-where prime and dot denote the usual derivative with respect to $\sigma$ and $\tau$ respectively. After reversing the
-sign of the interaction, canonically normalizing the kinetic term, and expanding the square root, the non-constant
-Lagrangian becomes
-\begin{equation}
-    L \rightarrow \int_0^a d\sigma (-\frac{1}{2} (\partial_{a} y)(\partial^{a} y) -
-    \frac{1}{8 T}[(\partial_{a} y)(\partial^{a} y)]^2 + \mathcal{O}(y^8)) \nonumber.
-\end{equation}
-Making the substitution $T = 1/(2 \pi l_s^2)$, the variation of this action leads to the following equations of motion,
-\begin{equation}
-    \partial^2 y + \pi l_s^2 ((\partial y)^2 \partial^2 y + 2 \pi l_s^2 (\partial \partial y) \cdot (\partial y \partial
-    y)) = 0 \nonumber .
-\end{equation}
-Consider now scattering of an excitation of $y$ off of a constant background, $\overline{y}$.  Define $\partial_{a}
-\overline{y} = C_{a}$ and $y = \phi + \overline{y}$.
-The linearized equations of motion take the form
-\begin{equation}
-    \partial^2 \phi + 6 \pi l_s^2 ( C_{a} C^{a} \partial^2 \phi + 2 (\partial_{a} \partial_{b} \phi) C^{a}
-    C^{b}) = 0 .
-\end{equation}
-In momentum space, this leads to the following superluminal dispersion relation and hence, speed of sound
-\begin{equation}
-    c_s^2 \equiv \frac{\omega^2}{k^2} = 1 + 12 \pi l_s^2 (k \cdot C)^2 \nonumber .
-\end{equation}
-This is to be expected from a similar calculation done in \cite{Adams:2006sv}, where it was shown that the sign of the
-leading interaction can often lead to macroscopic non-locality, despite the fact that elementary perturbations of the
-vacuum state exhibit no such pathological behavior.  We
+For simplicity we'll provide an example for a string in codimension one, where the Lagrangian
+density for the single transverse mode parameterizing perturbations of the string from equilibrium, can be written
+\begin{eqnarray}
+    \mathcal{L} = \frac{1}{2} (\partial_{a} X)(\partial^{a} X) -
+    \frac{1}{8 T}[(\partial_{a} X)(\partial^{a} X)]^2 + \mathcal{O}(X^8) \nonumber .
+\end{eqnarray}
+The field equations resulting from minimizing the action take the following form
+\begin{eqnarray}
+    \square X \left( 1- \frac{1}{2 T} (\partial_a X) (\partial^a X) \right) - \frac{1}{T} (\partial_a \partial_b X)
+    (\partial^a X \partial^b X) \nonumber \\
+    = 0. \nonumber
+\end{eqnarray}
+Now let us see how how when scattering off of non-trivial backgrounds, pathologies emerge.  Consider a large classical background,
+$\bar{X}$, such that $\partial_a \bar{X} = C_a$ for some constant vector $C$.  The linearized
+equations of motion of the field $\phi$ defined by $X = \bar{X} + \phi$ take the form
+\begin{eqnarray}
+    \square \phi \left( 1 - \frac{1}{2 T} C_a C^a \right) - \frac{1}{T} (\partial_a \partial_b \phi)
+    (C^a C^b) = 0. \nonumber
+\end{eqnarray}
+Expanding $\phi$ into plane-waves, this equations leads to the following expression in Fourier space
+\begin{eqnarray}
+    -p^2 \left( 1 - \frac{1}{2 T} C_a C^a \right) + \frac{1}{T} (k \cdot C)^2 = 0 \nonumber \\
+        \rightarrow -p^2 = - \frac{(k \cdot C)^2}{T - \frac{1}{2} C_a C^a} \; .  \nonumber
+\end{eqnarray}
+These dispersion relations are superluminal for $T > \frac{1}{2} C_a C^a$.
 
-%This behavior can be seen in a classical spacetime diagram of a Goldstone boson with a kink soliton solution.
+To see how these interactions with a non-trivial background manifest themselves semi-classically in
+a time advance, consider a large left moving solution to the NG equations of motion. This implies
+that $\bar{X}$ is a function of $\sigma_+ = \sigma + \tau$ only and $\partial_{\sigma} \bar{X} =
+\partial_{\tau} \bar{X} = \bar{X}'$ where $\bar{X}'$ is simply the derivative of X with respect to its argument.
+Again, we consider the codimension one case to avoid carrying flavor indices.
 
-% Add here the explanation and graph of scattering across a kink solution. Include metric calculation and all that jazz
+Scattering of a small right mover off of this background amounts to studying the null geodesics
+on the worldsheet with an induced metric given by our classical solution (now omitting bars over
+X and setting $T = 1$ for brevity)
+\begin{eqnarray}
+    \mathrm{ds}^2 &=& \left( \eta_{a b} - \frac{1}{T} \partial_a X \partial_b X \right)
+    \mathrm{d\sigma}^a \mathrm{d\sigma}^b \nonumber \\ &=& (-1-X'^2)\mathrm{d \tau}^2 - 2 X'^2 \mathrm{d \sigma}
+    \mathrm{d \tau} + (1 - X'^2) \mathrm{d \sigma}^2 \nonumber .
+\end{eqnarray}
+The null geodesic equation is given by
+\begin{eqnarray}
+    \dot{\sigma}(\tau) = \frac{X'^2 \pm 1}{-X'^2 + 1} \nonumber ,
+\end{eqnarray}
+and we chose the upper sign for a right moving excitation which will experience a non-trivial time
+shift. Already we can see this is a time advance since $\dot{\sigma} > 1$.  This advance can be
+calculated by considering the following
+\begin{eqnarray}
+    \Delta t &=& \int_{\infty}^{\infty} d\tau (1 - \dot{\sigma}) = \int_{\infty}^{\infty} d\tau \frac{-2
+    X'^2}{-X'^2 + 1} \nonumber \\
+    &=& - \int_{\infty}^{\infty} d\sigma_+ X'^2 (\sigma_+) \sim -l_s^2 \Delta E , \nonumber
+\end{eqnarray}
+where in the last line we incorporated the string scale to restore units and $\Delta E$ is the
+energy of the classical solution relative to the vacuum. We see that the time shift between the
+scattered solution and the freely propagating solution is negative, implying a classical
+superluminal effect.
 
-%*********************
-\section{Cosomology}
-%*********************
-
-Another calculation to shed light on the bizarre nature of this theory, in the spirit of \cite{Dubovsky:2012wk},
-is to interpret cosmological solutions on the wrong sign string worldsheet. In (1+1) dimensions, isotropy isn't
-a constraint, so the only notion of "rotation invariance" we can have is "boost invariance" or rotations in the
-$\sigma-\tau$ plane.  Homogeneity is over constraining, leaving us only with the trivial vacuum solution so we seek
-solutions that are functions of the invariant length on the worldsheet, $X \equiv X(-\tau^2 + \sigma^2)$.  Also, to
-simplify the discussion, we'll consider only one additional flavor to those that can be fixed by a gauge
-transformation. The equations of motion for \ref{action}, using hyperbolic coordinates
-\begin{equation}
-    \partial_{\rho^2} \left( \frac{\frac{1}{T_0} \partial_{\rho^2} X \rho^2}{\sqrt{-1 \pm \frac{1}{T_0} \rho^2 (\partial X)^2}} \right) = 0
-\end{equation}
-with $\rho^2 = -\tau^2 + \sigma^2$ which can be positive or negative, however each of these solution branches are disconnected.
 %**************************
 \section{Thermodynamics}
 %**************************
+
+So far, we have extracted dispersion relations with the Lagrangian and verified time advances in the
+classical theory suggested by the form of the S-Matrix. Another hallmark of any theory is the energy
+spectrum. To obtain this from the perspective of a 2 dimensional field on the
+worldsheet, we use the Thermodynamic Bethe Ansatz (TBA), $\mathrm{\grave{a}}$ la \cite{Dubovsky:2012wk}.  TBA
+exploits the symmetric topology of $S^1 \times S^1$. Consider a (1+1) dimensional field theory spanned in space by the first
+$S^1$ with radius R, and take the radius L of the other $S^1$ (the timelike circle) to infinity. The partition function of
+this theory is then dominated by the ground state energy
+\begin{eqnarray}
+    Z(R,L) \sim e^{-L E(R)} \nonumber .
+\end{eqnarray}
+Similarly, if we were to compactify on the circle of radius L, the $L \rightarrow \infty$ limit
+would correspond to the thermodynamic limit of a theory with finite temperature, $1/R$ .  The
+partition function of this theory is
+\begin{eqnarray}
+    Z(R,L) = \mathrm{Tr} \left( e^{-R H_L} \right) \nonumber ,
+\end{eqnarray}
+where $H_L$ is given by the Hamiltonian of this representation. By equating the two partition
+functions, as shown in \cite{Zamolodchikov:1989cf}
+\begin{eqnarray}
+    E(R) = R f(R) \nonumber ,
+\end{eqnarray}
+where $f(R)$ is the free energy of the system.  Now the task of finding the ground state energy of
+our system of bosons is equivalent to the task of finding the free energy. For this we again follow
+\cite{Zamolodchikov:1989cf} and \cite{Dubovsky:2012wk} and consider the wave function as consisting
+of several free wave functions, with the S-Matrix providing us with the appropriate matching conditions patching
+them together.  The resulting integral equation constraining the particle densities is then given by
+\begin{eqnarray}
+    2 \pi \rho_{R,L}^i(p) = L - \l_s^2 \sum_{j=1}^{D-2} \int_0^{\infty} p' \rho_{1L,R}^j (p') dp' ,
+\end{eqnarray}
+where $\rho_{1R,L}$ is the density of right and left moving particles respectively and $\rho_{L,R}$ is
+the level density. To calculate the free energy subject to the constraints above, we have to
+find the saddle point of the partition function defined as
+\begin{eqnarray}
+    Z(R,L) = \int \prod_i \mathcal{D} \rho^i_L \mathcal{D} \rho^i_R \; \mathrm{exp}(- R H[\rho^i_{1L},
+    \rho^i_{1R}] + \nonumber \\
+    S[\rho^i_{1L}, \rho^i_{1R},\rho_L,\rho_R] ) \nonumber .
+\end{eqnarray}
+The calculation follows exactly along the lines of \cite{Dubovsky:2012wk} only with negative vacuum energy
+on the worldsheet and slightly different equations for the pseudoenergies. The free energy is then given by
+\begin{eqnarray}
+    F = - \frac{L}{l_s^2} + \frac{L}{2 \pi R} \sum_{j=1}^{D-2} \int_0^{\infty} d p'
+    \mathrm{ln}\left(1 - e^{-R \epsilon_L^j (p')} \right) \nonumber \\
+    + \frac{L}{2 \pi R} \sum_{j=1}^{D-2} \int_0^{\infty} d p'
+    \mathrm{ln}\left(1 - e^{-R \epsilon_R^j (p')} \right) \nonumber ,
+\end{eqnarray}
+where the functions $\epsilon_{L,R}$ are given by
+\begin{eqnarray}
+    \epsilon_L^i (p) = p \left[ 1 - \frac{l_s^2}{2 \pi R} \sum_{j=1}^{D-2} \int_0^{\infty}
+    d p' \mathrm{ln} \left(1 - e^{-R \epsilon_R^j (p')}\right) \right] \nonumber \\
+    \epsilon_R^i (p) = p \left[ 1 - \frac{l_s^2}{2 \pi R} \sum_{j=1}^{D-2} \int_0^{\infty}
+    d p' \mathrm{ln} \left(1 - e^{-R \epsilon_L^j (p')}\right) \right] \nonumber .
+\end{eqnarray}
+The ground state energy is then given by the solution to this series of equations which is connected
+to the free theory.  The result is
+\begin{eqnarray}
+    E_0(R) = \frac{R}{L} F(R) = -\sqrt{\frac{R^2}{l_s^4} + \frac{4 \pi}{l_s^2} \frac{D-2}{12}}
+    \nonumber .
+\end{eqnarray}
+As expected, this expression closely resembles the ground state energy of Bosonic string theory
+found in the light cone gauge. One major difference however, is that the free energy is real at
+every temperature ($1/R$).  This means that the Hagedorn behavior of canonical worldsheet dynamics
+isn't present in this theory.  In a sense, the thermodynamics of this superluminal theory is less
+pathological.
+
+Hagedorn behavior arises in string theory because the exponential degeneracy of states becomes
+closer and closer in energy with higher and higher string excitations. This leads to a divergence in
+the density of states, which in turn can be seen as a divergence of the heat capacity in the
+thermodynamic limit of the theory.  Here we have no such divergence in the second derivative of the
+free energy.  This is because additional excitations of the negative tension string seem to 'repel'
+each other in the sense that there is negative binding energy. To see this we need to derive the
+full energy spectrum of the theory.
+
+If one repeats the previous exercise for excited states, which amounts to modifying the TBA
+constraint equations by a term resembling the addition of a chemical potential, as in
+\cite{Dubovsky:2012wk}, one obtains the following energy spectrum
+\begin{eqnarray}
+    \label{enspec}
+    E(N,\tilde{N}) = -\left( \frac{4 \pi^2 (N - \tilde{N})^2}{R^2} + \frac{R^2}{l_s^4} \right .
+    \nonumber \\ \left . -\frac{4 \pi}{l_s^2} \left( N + \tilde{N} - \frac{D-2}{12} \right)
+    \right)^{1/2} .
+\end{eqnarray}
+The lack of Hagedorn behavior in this wrong sign theory is now clear. Examining (\ref{enspec}) in
+the limit of $R\to\infty$, we conclude that the interaction can be interpreted as repulsive. For
+instance if we take $\Delta N >> 1$ right movers and left movers, we find that
+\begin{eqnarray}
+   E_{\Delta N,0}+E_{0,\Delta N}-2E_{0,0} = -\frac{4\pi \Delta N}{R}  \nonumber \\
+   E_{\Delta N,\Delta N} - E_{0,0} \approx +\frac{4\pi \Delta N}{R} \nonumber
+\end{eqnarray}
+Thus we have negative binding energy $ (E_{\Delta N,0}+E_{0,\Delta N}-2E_{0,0})-(E_{\Delta N,\Delta
+N} - E_{0,0} )<0 $. This is to be contrasted with the $\mathcal{O}(1/R^2)$ binding energy found in
+the $+l_{s}^{2}$ theory.
+
+Another striking feature of this theory is that the spectrum resists compactification. To see this,
+we rewrite the expression beneath the square root as
+\begin{eqnarray}
+    E^2 \propto \left( N - \tilde{N} \right)^2 + \frac{1}{4} a^2 - a \left( N + \tilde{N} - b \right)
+    \nonumber ,
+\end{eqnarray}
+where $a = \left( R / l_s \right)^2 1 / \pi $ is the size of the compactified dimension relative to
+the string scale and $ b = (D-2)/12 $ is related to the number of different flavors. We see that at
+fixed $a>1$, the Hamiltonian becomes non-hermitian as we start increasing the number excitations
+above the vacuum, ie $E^2 < 0$. This appears to be the quantum analogue of closed time-like curves
+that can be constructed with classical scattering. If we attempted to compactify the classical
+theory on a circle and chose the size of the circle such that $R = \Delta t$, we would create a
+closed timelike curve.  To get a relation between the classical energy of the kink and the number of
+movers, we assume in the semiclassical limit $E$ is dominated by the Kaluza-Klein energy, i.e. $E =
+2 \pi N / R $.  This is justified by the large N behavior of the energy spectrum.  Solving this
+condition for closed
+timelike curves for the critical radius as a function of the size ($N$) of the kink, we arrive at
+\begin{eqnarray}
+    R = l_s^2 \frac{2 \pi N}{R} \rightarrow R_{crit} = \sqrt{2 \pi N} l_s \; . \nonumber
+\end{eqnarray}
+Likewise, in the quantum theory, we could calculate where $E^2$ becomes negative in the limit $N >>
+\tilde{N} >> 1$ and we find precisely that $R_{crit} = \sqrt{2 \pi N} l_s$.
+
+An interesting remark is that the condition that $E^2$ vanish at some value of $N$ even for a
+minimally perturbed system with $\tilde{N}$=1, is that $D \leq 26$. Thus the critical dimension
+seems to play a role in truncating the spectrum to avoid closed timelike curves.
+
+Due to the lack of Hagedorn behavior, we expect a non-singular equation of state.  From the free
+energy, we see that the pressure dependence of the energy density becomes
+\begin{eqnarray}
+    \label{eos}
+    \rho = \frac{p}{1+l_s^2 p} .
+\end{eqnarray}
+This is just a $\sigma \leftrightarrow \tau$ transformation of the stress energy tensor,
+swapping $\rho$ and $p$ of the canonical positive Nambu-Goto theory. This is a recurring theme;
+notice that the spacetime diagram of null geodesics in the classical scattering off of a kink
+also undergoes this transformation when the sign of the coupling reverses.  For strings, this
+intuition holds because swapping the sign of $l_s^2$ is equivalent to shifting the target space
+metric from $(-,+, \cdots , +)$ to $(-,+,-, \cdots,-)$, effectively reversing the role of $\tau$ and
+$\sigma$. The target space interpretation becomes unclear for general $p$-branes, where the
+generalization of this argument leads to multiple time dimensions.
+
+%*********************
+\section{Cosmology}
+%*********************
+
+Another calculation to shed light on the bizarre nature of this theory, in the spirit of
+\cite{Dubovsky:2012wk}, is to interpret cosmological solutions on the wrong sign string worldsheet.
+In (1+1) dimensions, isotropy isn't a constraint, so the only notion of "rotation invariance" we can
+have is "boost invariance" or rotations in the $\sigma\tau$ plane.  Homogeneity is over
+constraining, leaving us only with the trivial vacuum solution so we seek solutions that are
+functions of the invariant length on the worldsheet, $X \equiv X(-\tau^2 + \sigma^2)$.  Again, to
+simplify the discussion, we'll consider only one additional flavor to those that can be fixed by a
+gauge transformation. The equations of motion for (\ref{action}), using hyperbolic coordinates are
+\begin{equation}
+    \partial_{\alpha^2} \left( \frac{\alpha^2 \partial_{\alpha^2} X}{\sqrt{1 -
+    \frac{4\alpha^2}{T}(\partial X)^2}} \right) = 0 \nonumber \; ,
+\end{equation}
+with $\alpha^2 = -\tau^2 + \sigma^2$.  For the $+l_{s}^{2}$ theory (normalizing $l_s^2$ for brevity), the
+solution consisted of two branches,
+$\mathcal{A}$ and $\mathcal{B}$
+\begin{align}
+    \mathrm{Branch} \, \mathcal{A}: \; \; \left . X^{0}_A \right . ^{2} -\left . X^{1}_A \right . ^{2} -
+    (\text{sinh } X_A)^{2}=0 \nonumber \\
+    \mathrm{Branch} \, \mathcal{B}: \; \; \left . X^{1}_B \right . ^{2} -\left . X^{0}_B \right . ^{2} -
+    (\text{cosh } X_B)^{2}=0 \nonumber
+\end{align}
+Switching the sign of the string tension doesn't change the solutions to the field equations,
+however it does alter their interpretation.  Recall from the last section that if we view the Goldstone
+fields as embedding coordinates in an ambient spacetime (which we're implicitly doing here by
+writing the solutions as a hypersurface in the 3 dimensions spanning flavor space) reversing the
+sign of the derivative coupling effectively reverses the role of space and time, \emph{ie.} the role
+of $X^0$ and $X^1$. Let us examine the effects of this on the cosmological interpretation of
+the solutions.
+
+As in \cite{Dubovsky:2012wk}, we define for branches $\mathcal{A}$ and $\mathcal{B}$, $X_A^0 = \rho
+\, \mathrm{cosh} \lambda$, $X_A^1 = \rho \, \mathrm{sinh} \lambda$, and $X_B^0 = \rho
+\, \mathrm{sinh} \lambda$, $X_B^1 = \rho \, \mathrm{cosh} \lambda$ respectively. This leads to the
+following induced metric on the worldsheet for solution $\mathcal{A}$
+\begin{eqnarray}
+    ds^2_A = -\frac{\rho^2}{1+\rho^2} d\rho^2 + \rho^2 d \lambda^2 = (\tau^2 + 2 \tau)
+    d\lambda^2 - d \tau^2 \nonumber ,
+\end{eqnarray}
+with $\tau = \sqrt{1 + \rho^2} -1$. For $\mathcal{B}$,
+\begin{eqnarray}
+    ds^2_B =  - \rho^2 d \lambda^2 + \frac{\rho^2}{\rho^2 - 1} d \rho^2 = dr^2 - (1 + r^2) d \lambda^2
+    \nonumber ,
+\end{eqnarray}
+with $r = \sqrt{\rho^2 - 1} $.  The interpretation of these solutions is inverted from the positive
+theory.  We now should consider our metric to be mostly minuses, and thus $r$ and $\tau$ are time
+and space respectively. Now branch $\mathcal{A}$ is a static solution, and branch $\mathcal{B}$ is a
+cosmological solution, but this time with no big bang singularity.  The microscopic understanding of
+this lack of singularity can be thought of as the remnant of the wrong sign coupling leading to
+negative binding energies.  This repulsion manifests itself as a minimal size of the worldsheet as
+one interpolates in time from $-\infty$ to $+\infty$.
+
+\section{Acknowledgements}
+
+We'd like to thank Victor Gorbenko for his valuable input during this project.
+
+\bibliography{superlum}
 
 \end{document}

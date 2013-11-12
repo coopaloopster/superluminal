@@ -6,7 +6,8 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{0}%
+\providecommand{\noopsort}[1]{}\providecommand{\singleletter}[1]{#1}%
+\begin{thebibliography}{3}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -50,4 +51,38 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
+\bibitem [{\citenamefont {Dubovsky}\ \emph {et~al.}(2012)\citenamefont
+  {Dubovsky}, \citenamefont {Flauger},\ and\ \citenamefont
+  {Gorbenko}}]{Dubovsky:2012wk}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Dubovsky}}, \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Flauger}}, \
+  and\ \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont {Gorbenko}},\ }\href
+  {\doibase 10.1007/JHEP09(2012)133} {\bibfield  {journal} {\bibinfo  {journal}
+  {JHEP}\ }\textbf {\bibinfo {volume} {1209}},\ \bibinfo {pages} {133}
+  (\bibinfo {year} {2012})},\ \Eprint {http://arxiv.org/abs/1205.6805}
+  {arXiv:1205.6805 [hep-th]} \BibitemShut {NoStop}%
+%%CITATION = ARXIV:1205.6805;%%
+\bibitem [{\citenamefont {Adams}\ \emph {et~al.}(2006)\citenamefont {Adams},
+  \citenamefont {Arkani-Hamed}, \citenamefont {Dubovsky}, \citenamefont
+  {Nicolis},\ and\ \citenamefont {Rattazzi}}]{Adams:2006sv}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Adams}}, \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Arkani-Hamed}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Dubovsky}}, \bibinfo
+  {author} {\bibfnamefont {A.}~\bibnamefont {Nicolis}}, \ and\ \bibinfo
+  {author} {\bibfnamefont {R.}~\bibnamefont {Rattazzi}},\ }\href {\doibase
+  10.1088/1126-6708/2006/10/014} {\bibfield  {journal} {\bibinfo  {journal}
+  {JHEP}\ }\textbf {\bibinfo {volume} {0610}},\ \bibinfo {pages} {014}
+  (\bibinfo {year} {2006})},\ \Eprint {http://arxiv.org/abs/hep-th/0602178}
+  {arXiv:hep-th/0602178 [hep-th]} \BibitemShut {NoStop}%
+%%CITATION = HEP-TH/0602178;%%
+\bibitem [{\citenamefont {Zamolodchikov}(1990)}]{Zamolodchikov:1989cf}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Zamolodchikov}},\ }\href {\doibase 10.1016/0550-3213(90)90333-9} {\bibfield
+  {journal} {\bibinfo  {journal} {Nucl.Phys.}\ }\textbf {\bibinfo {volume}
+  {B342}},\ \bibinfo {pages} {695} (\bibinfo {year} {1990})}\BibitemShut
+  {NoStop}%
+%%CITATION = NUPHA,B342,695;%%
 \end{thebibliography}%
